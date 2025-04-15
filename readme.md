@@ -59,16 +59,16 @@ public static class TestCases
 -- Testing results of problem "TwoSum" --
 
 Test 0: [successfull]
-Expected: {"val":7,"next":{"val":0,"next":{"val":8,"next":null}}}
-Result: {"val":7,"next":{"val":0,"next":{"val":8,"next":null}}}
+Expected: [0,1]
+Result: [0,1]
 
 Test 1: [successfull]
-Expected: {"val":0,"next":null}
-Result: {"val":0,"next":null}
+Expected: [1,2]
+Result: [1,2]
 
 Test 2: [successfull]
-Expected: {"val":8,"next":{"val":9,"next":{"val":9,"next":{"val":9,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":1,"next":null}}}}}}}}
-Result: {"val":8,"next":{"val":9,"next":{"val":9,"next":{"val":9,"next":{"val":0,"next":{"val":0,"next":{"val":0,"next":{"val":1,"next":null}}}}}}}}
+Expected: [0,1]
+Result: [0,1]
 ```
 
 ## How it works

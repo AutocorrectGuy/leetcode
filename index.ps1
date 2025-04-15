@@ -2,7 +2,7 @@ Set-StrictMode -Version Latest
 
 # -- This file path is used in `./Program.cs` to determine which .cs file to run and 
 # which corresponding tests file to use. Therefore do NOT change the name of this variable.
-[string] $problemFilePath = "./Problems/2_AddTwoNumbers.cs"
+[string] $problemFilePath = "./Problems/1_TwoSum.cs"
 
 # -- Tests should be named with the same name as c# file and end with `.tests.cs`
 # e.g. `./1_TwoSum.tests.cs`.

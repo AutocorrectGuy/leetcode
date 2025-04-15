@@ -168,90 +168,37 @@ public class TestCase
         this.expected = expected;
     }
 }
-// -- ListNode model taken from leetcode, then updated to read test cases
-public class ListNode {
-  public int val;
-  public ListNode next;
-
-  public ListNode(int val = 0, ListNode next = null) {
-    this.val = val;
-    this.next = next;
-  }
-
-  // for reading inputs from test cases
-  public ListNode(List<int> inputs) {
-    if(inputs.Count == 0) return;
-    
-    this.val = inputs[0];
-    
-    if(inputs.Count == 1) 
-      return;
-
-    ListNode currentNode = this;
-    for (int i = 1; i < inputs.Count; i++) {
-      currentNode.next = new ListNode(inputs[i]);
-      currentNode = currentNode.next;
-    }
-  }
-}
-
 public class Solution
 {
-  public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+  public int[] TwoSum(int[] nums, int target)
   {
-    ListNode dummyListNode = new ListNode();
-    ListNode currentNode = dummyListNode;
-    int carry = 0;
-
-    while (l1 != null || l2 != null || carry != 0)
-    {
-      int val1 = l1 != null ? l1.val : 0;
-      int val2 = l2 != null ? l2.val : 0;
-      int totalSum = val1 + val2 + carry;
-      carry = (totalSum / 10);
-
-      currentNode.next = new ListNode(totalSum % 10);
-      currentNode = currentNode.next;
-
-      if (l1 != null) l1 = l1.next;
-      if (l2 != null) l2 = l2.next;
+    Dictionary<int, int> map = new Dictionary<int, int> { { target - nums[0], 0 } };
+    
+    for (int i = 1; i < nums.Length; i++) {
+      if (map.ContainsKey(nums[i]))
+        return new[] { map[nums[i]], i };
+      else
+        map[target - nums[i]] = i;
     }
-
-    return dummyListNode.next;
+    
+    return new int[0];
   }
 }
 public static class TestCases
 {
-  public static List<TestCase> All = new List<TestCase> {
-    
-    // First test case
+  public static readonly List<TestCase> All = new List<TestCase>{
     new TestCase {
-      args = new object[] {
-        new ListNode(new List<int> { 2, 4, 3 }),
-        new ListNode(new List<int> { 5, 6, 4 })
-      },
-      expected = new ListNode(new List<int> { 7, 0, 8 })
+      args = new object[] {new int[] { 2, 7, 11, 15 }, 9},
+      expected = new int[] { 0, 1 }
     },
-
-    // Second test case
-    new TestCase
-    {
-      args = new object[] {
-        new ListNode(new List<int> { 0 }),
-        new ListNode(new List<int> { 0 })
-      },
-      expected = new ListNode(new List<int> { 0 })
+    new TestCase {
+      args = new object[] {new int[] { 3, 2, 4 }, 6},
+      expected = new int[] { 1, 2 }
     },
-
-    // Third test case
-    new TestCase
-    {
-      args = new object[] {
-        new ListNode(new List<int> { 9, 9, 9, 9, 9, 9, 9 }),
-        new ListNode(new List<int> { 9, 9, 9, 9 })
-      },
-      expected = new ListNode(new List<int> { 8, 9, 9, 9, 0, 0, 0, 1 })
-    },
+    new TestCase {
+      args = new object[] {new int[] { 3, 3 }, 6},
+      expected = new int[] {0, 1}
+    }
   };
-}
+};
 
