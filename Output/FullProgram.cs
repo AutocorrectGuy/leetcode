@@ -61,6 +61,7 @@ public class TestingFramework
         Console.Write(string.Format("-- Testing results of problem \"{0}\" --", methodName));
         Console.ResetColor();
         Console.WriteLine("");
+        
         // At this point powershell script should have selected the corresponding test cases
         // so the static `TestCases` class is being used 
         for (int i = 0; i < TestCases.All.Count; i++)
