@@ -56,7 +56,7 @@ public static class TestCases
 ```
 ### Test results
 ```ps1
--- Testing results of problem "AddTwoNumbers" --
+-- Testing results of problem "TwoSum" --
 
 Test 0: [successfull]
 Expected: {"val":7,"next":{"val":0,"next":{"val":8,"next":null}}}
@@ -77,12 +77,12 @@ Problems are stored in the `./Problems` directory.
 
 To select which problem to run, change the value of the variable at the top of `index.ps1`:
 
-`[string] $problemFilePath = "./Problems/2_AddTwoNumbers.cs"`
+`[string] $problemFilePath = "./Problems/1_TwoSum.cs"`
 
 The corresponding test file must follow the same naming convention but use the `.tests.cs` suffix:
 
-- `./Problems/2_AddTwoNumbers.cs` – main problem file  
-- `./Problems/2_AddTwoNumbers.tests.cs` – test cases for the problem
+- `./Problems/1_TwoSum.cs` – main problem file  
+- `./Problems/1_TwoSum.tests.cs` – test cases for the problem
 
 You can leave `$testCasesFilePath` empty. The script will automatically look for a matching `.tests.cs` file based on the problem file name.
 
@@ -109,6 +109,6 @@ If something breaks or you want to debug, the full generated `.cs` file is writt
 ## Conventions
 
 - Every problem must be in a static class named `Solution`.
-- The method name is derived from the problem filename. For example, `2_AddTwoNumbers.cs` → `TwoSum` method.
+- The method name is derived from the problem filename. For example, `2_TwoSum.cs` → `TwoSum` method.
 - Tests must be declared in a static `TestCases` class using `TestCase` instances.
 - Arguments are passed as object arrays, and results are compared using stringified JSON.
